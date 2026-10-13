@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Garage HF Estética | Estética Automotiva</title>
+  <meta name="description" content="Polimento técnico, lavagem, higienização de bancos, cristalização de para-brisa e recuperação de faróis. Agende online em segundos.">
+  <meta name="theme-color" content="#0b0b0c">
+  <meta name="author" content="Fixa Estúdio">
+  <meta property="og:title" content="Garage HF Estética">
+  <meta property="og:description" content="Estética automotiva com agendamento online.">
+  <meta property="og:image" content="img/logo-contato.png">
+  <link rel="icon" href="img/logo.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+  <header class="nav" id="nav">
+    <a href="#topo" class="nav-brand" aria-label="Início"><img src="img/logo.webp" alt="Garage HF Estética"></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#servicos">Serviços</a>
+      <a href="#resultados">Resultados</a>
+      <a href="#processo">Como funciona</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <a href="#agendar" class="btn btn-primary btn-sm">Agendar</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu"><span></span><span></span></button>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="topo">
+    <div class="hero-bg" aria-hidden="true">
+      <div class="hero-glow"></div>
+      <div class="hero-grid"></div>
+      <div class="hero-sweep"></div>
+    </div>
+    <div class="hero-inner">
+      <p class="eyebrow hero-in" style="--d:0">Estética automotiva · Goiás</p>
+      <img class="hero-logo hero-in" style="--d:1" src="img/logo.webp" alt="Garage HF Estética">
+      <h1 class="hero-title hero-in" style="--d:2">Seu carro com <span class="hl">brilho de showroom.</span></h1>
+      <p class="hero-sub hero-in" style="--d:3">Polimento técnico, higienização, faróis como novos e muito mais. Escolha o serviço, o horário e pronto: seu agendamento cai direto no nosso WhatsApp.</p>
+      <div class="hero-cta hero-in" style="--d:4">
+        <a href="#agendar" class="btn btn-primary btn-lg">Agendar agora</a>
+        <a href="#resultados" class="btn btn-ghost btn-lg">Ver resultados</a>
+      </div>
+    </div>
+    <a href="#servicos" class="scroll-cue" aria-label="Rolar para baixo"><span></span></a>
+  </section>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track" id="ticker"></div>
+  </div>
+
+  <!-- SERVIÇOS -->
+  <section class="section" id="servicos">
+    <div class="container">
+      <header class="section-head reveal">
+        <p class="eyebrow">O que fazemos</p>
+        <h2>Serviços pensados para <span class="hl">valorizar</span> o seu carro</h2>
+        <p class="lead">Preço transparente. O valor final ajusta conforme o porte do veículo e aparece na hora de agendar.</p>
+      </header>
+      <div class="svc-grid" id="svcGrid"></div>
+    </div>
+  </section>
+
+  <!-- RESULTADOS -->
+  <section class="section section-dark" id="resultados">
+    <div class="container">
+      <header class="section-head reveal">
+        <p class="eyebrow">Antes e depois</p>
+        <h2>Arraste e veja a <span class="hl">diferença</span></h2>
+        <p class="lead">Fotos reais de serviços feitos aqui na Garage HF.</p>
+      </header>
+      <div class="ba-grid">
+        <figure class="ba morph" data-morph>
+          <div class="ba-frame" data-ba>
+            <img src="img/farol-depois.jpg" alt="Farol depois da recuperação" loading="lazy">
+            <div class="ba-before"><img src="img/farol-antes.jpg" alt="Farol antes da recuperação" loading="lazy"></div>
+            <span class="ba-tag ba-tag-l">Antes</span><span class="ba-tag ba-tag-r">Depois</span>
+            <div class="ba-handle"><span></span></div>
+            <input type="range" min="0" max="100" value="50" aria-label="Comparar antes e depois do farol">
+          </div>
+          <figcaption>Recuperação de faróis</figcaption>
+        </figure>
+        <figure class="ba morph" data-morph>
+          <div class="ba-frame" data-ba>
+            <img src="img/motor-depois.jpg" alt="Motor depois da limpeza" loading="lazy">
+            <div class="ba-before"><img src="img/motor-antes.jpg" alt="Motor antes da limpeza" loading="lazy"></div>
+            <span class="ba-tag ba-tag-l">Antes</span><span class="ba-tag ba-tag-r">Depois</span>
+            <div class="ba-handle"><span></span></div>
+            <input type="range" min="0" max="100" value="50" aria-label="Comparar antes e depois do motor">
+          </div>
+          <figcaption>Limpeza detalhada do cofre do motor</figcaption>
+        </figure>
+      </div>
+
+      <div class="gallery">
+        <div class="g-item g-tall morph" data-morph><img src="img/camaro-frente.jpg" alt="Camaro amarelo após lavagem" loading="lazy"></div>
+        <div class="g-item morph" data-morph><video src="img/video2.mp4" muted loop playsinline preload="metadata" data-autoplay></video></div>
+        <div class="g-item morph" data-morph><img src="img/bmw.jpg" alt="BMW X4 preta com brilho" loading="lazy"></div>
+        <div class="g-item g-tall morph" data-morph><video src="img/video1.mp4" muted loop playsinline preload="metadata" data-autoplay></video></div>
+        <div class="g-item morph" data-morph><img src="img/camaro-roda.jpg" alt="Detalhe da roda do Camaro" loading="lazy"></div>
+        <div class="g-item morph" data-morph><img src="img/camaro-traseira.jpg" alt="Traseira do Camaro" loading="lazy"></div>
+      </div>
+      <p class="center reveal"><a class="btn btn-ghost" id="instaLink" target="_blank" rel="noopener">Mais no Instagram</a></p>
+    </div>
+  </section>
+
+  <!-- PROCESSO -->
+  <section class="process" id="processo" data-process>
+    <div class="process-sticky">
+      <div class="container process-inner">
+        <div class="process-left">
+          <p class="eyebrow">Como funciona</p>
+          <h2>Do agendamento à entrega, <span class="hl">sem fila e sem surpresa</span></h2>
+          <div class="process-bar"><span></span></div>
+        </div>
+        <ol class="process-steps">
+          <li><b>01</b><h3>Agende online</h3><p>Escolha o serviço, informe o carro e veja na hora os horários livres.</p></li>
+          <li><b>02</b><h3>Confirmação no WhatsApp</h3><p>Seu pedido chega direto para nós com todos os detalhes. Sem ligação, sem espera.</p></li>
+          <li><b>03</b><h3>Execução com técnica</h3><p>Produtos profissionais, ferramentas certas e atenção a cada detalhe.</p></li>
+          <li><b>04</b><h3>Entrega com brilho</h3><p>Você recebe o carro pronto e as fotos do antes e depois.</p></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- NÚMEROS -->
+  <section class="section stats">
+    <div class="container stats-grid">
+      <div class="stat reveal"><strong data-count="5">0</strong><span>serviços especializados</span></div>
+      <div class="stat reveal"><strong data-count="24" data-suffix="h">0</strong><span>agendamento online, a qualquer hora</span></div>
+      <div class="stat reveal"><strong data-count="0">0</strong><span>filas: você chega no horário marcado</span></div>
+      <div class="stat reveal"><strong data-count="100" data-suffix="%">0</strong><span>cuidado em cada detalhe</span></div>
+    </div>
+  </section>
+
+  <!-- AGENDAMENTO -->
+  <section class="section" id="agendar">
+    <div class="container">
+      <header class="section-head reveal">
+        <p class="eyebrow">Agendamento online</p>
+        <h2>Reserve seu horário em <span class="hl">4 passos</span></h2>
+        <p class="lead">Os horários abaixo são atualizados em tempo real. O que aparece livre está livre.</p>
+      </header>
+
+      <div class="wizard reveal" id="wizard">
+        <ol class="wz-steps" id="wzSteps">
+          <li data-go="1"><i>1</i><span>Serviços</span></li>
+          <li data-go="2"><i>2</i><span>Veículo</span></li>
+          <li data-go="3"><i>3</i><span>Data e horário</span></li>
+          <li data-go="4"><i>4</i><span>Seus dados</span></li>
+        </ol>
+
+        <div class="wz-layout">
+          <div class="wz-body">
+            <!-- passo 1 -->
+            <div class="wz-pane" data-step="1">
+              <h3 class="wz-title">Quais serviços você quer?</h3>
+              <p class="wz-hint">Pode escolher mais de um.</p>
+              <div class="pick-list" id="pickServices"></div>
+            </div>
+
+            <!-- passo 2 -->
+            <div class="wz-pane" data-step="2">
+              <h3 class="wz-title">Qual é o seu veículo?</h3>
+              <p class="wz-hint">Digite o modelo ou escolha a marca.</p>
+              <div class="car-search">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+                <input type="search" id="carSearch" placeholder="Ex.: Onix, Hilux, Strada, Corolla..." autocomplete="off">
+              </div>
+              <div class="brand-chips" id="brandChips"></div>
+              <div class="car-results" id="carResults"></div>
+              <details class="car-manual" id="carManual">
+                <summary>Não achei meu veículo</summary>
+                <div class="form-grid">
+                  <label>Marca<input id="manMarca" placeholder="Ex.: Troller"></label>
+                  <label>Modelo<input id="manModelo" placeholder="Ex.: T4"></label>
+                  <label>Tipo<select id="manCat"></select></label>
+                  <button type="button" class="btn btn-ghost" id="manOk">Usar este veículo</button>
+                </div>
+              </details>
+            </div>
+
+            <!-- passo 3 -->
+            <div class="wz-pane" data-step="3">
+              <h3 class="wz-title">Escolha o dia e o horário</h3>
+              <p class="wz-hint" id="durHint"></p>
+              <div class="date-strip-wrap">
+                <button type="button" class="strip-nav" data-dir="-1" aria-label="Dias anteriores">‹</button>
+                <div class="date-strip" id="dateStrip"></div>
+                <button type="button" class="strip-nav" data-dir="1" aria-label="Próximos dias">›</button>
+              </div>
+              <div class="slot-head" id="slotHead"></div>
+              <div class="slot-grid" id="slotGrid"></div>
+              <ul class="legend">
+                <li><i class="lg-livre"></i>Disponível</li>
+                <li><i class="lg-ocupado"></i>Ocupado</li>
+                <li><i class="lg-indisp"></i>Indisponível</li>
+              </ul>
+            </div>
+
+            <!-- passo 4 -->
+            <div class="wz-pane" data-step="4">
+              <h3 class="wz-title">Seus dados</h3>
+              <p class="wz-hint">Usamos só para confirmar o agendamento.</p>
+              <form class="form-grid" id="dadosForm" autocomplete="on">
+                <label class="full">Nome completo*<input name="nome" required autocomplete="name" placeholder="Seu nome"></label>
+                <label>WhatsApp*<input name="telefone" required inputmode="tel" autocomplete="tel" placeholder="(64) 99999-9999"></label>
+                <label>Placa<input name="placa" placeholder="ABC1D23" maxlength="8" style="text-transform:uppercase"></label>
+                <label>Cor do veículo<input name="cor" placeholder="Ex.: Prata"></label>
+                <label>Ano<input name="ano" inputmode="numeric" maxlength="4" placeholder="Ex.: 2020"></label>
+                <label class="full">Observações<textarea name="obs" rows="3" placeholder="Algo que devemos saber? Ex.: mancha de café no banco do motorista"></textarea></label>
+              </form>
+            </div>
+          </div>
+
+          <aside class="wz-summary">
+            <h4>Resumo</h4>
+            <dl id="summary"></dl>
+            <div class="sum-total"><span>Total estimado</span><strong id="sumTotal">R$ 0,00</strong></div>
+            <p class="sum-note" id="sumNote"></p>
+            <p class="wz-error" id="wzError" role="alert"></p>
+            <div class="wz-actions">
+              <button type="button" class="btn btn-ghost" id="wzBack">Voltar</button>
+              <button type="button" class="btn btn-primary" id="wzNext">Continuar</button>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section class="section section-dark" id="contato">
+    <div class="container contact">
+      <div class="contact-text reveal">
+        <p class="eyebrow">Fale com a gente</p>
+        <h2>Ficou com dúvida? <span class="hl">Chama no WhatsApp.</span></h2>
+        <ul class="contact-list">
+          <li><span>WhatsApp</span><a id="cWhats" target="_blank" rel="noopener"></a></li>
+          <li><span>Instagram</span><a id="cInsta" target="_blank" rel="noopener"></a></li>
+          <li><span>Endereço</span><b id="cEnd"></b></li>
+          <li><span>Horários</span><b id="cHoras"></b></li>
+        </ul>
+        <a class="btn btn-primary btn-lg" id="cBtn" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+      </div>
+      <div class="contact-logo morph" data-morph><img src="img/logo-contato.png" alt="Garage HF Estética" loading="lazy"></div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>© <span id="ano"></span> Garage HF Estética</span>
+      <a class="fixa-credit" href="#" aria-label="Site desenvolvido por Fixa Estúdio">Site por <img src="img/fixa-estudio.png" alt="Fixa Estúdio"></a>
+      <a href="admin.html" class="footer-admin">Área do dono</a>
+    </div>
+  </footer>
+
+  <a class="fab-whats" id="fabWhats" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C9 3 3.3 8.6 3.3 15.6c0 2.4.7 4.7 1.9 6.7L3 29l6.9-2.1c1.9 1 4 1.6 6.1 1.6 7 0 12.7-5.7 12.7-12.7S23 3 16 3zm0 23.2c-1.9 0-3.8-.5-5.4-1.5l-.4-.2-4.1 1.2 1.3-4-.3-.4c-1.1-1.7-1.6-3.6-1.6-5.6C5.5 9.9 10.2 5.3 16 5.3S26.5 9.9 26.5 15.7 21.8 26.2 16 26.2zm5.8-7.8c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.5-1.6-.9-.8-1.6-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.5.1-.2.1-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.2 3.1 1.3 3.3c.2.2 2.3 3.5 5.5 4.9 2.7 1.1 3.3.9 3.9.8.6-.1 1.9-.8 2.2-1.5.3-.8.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg>
+  </a>
+
+  <!-- modal de confirmação -->
+  <div class="modal" id="okModal" hidden>
+    <div class="modal-card">
+      <div class="ok-check"><svg viewBox="0 0 52 52"><circle cx="26" cy="26" r="24"/><path d="M14 27l8 8 16-17"/></svg></div>
+      <h3>Horário reservado!</h3>
+      <p id="okText"></p>
+      <p class="ok-small">Para finalizar, envie a mensagem pronta para o nosso WhatsApp:</p>
+      <a class="btn btn-primary btn-lg btn-block" id="okWhats" target="_blank" rel="noopener">Enviar confirmação no WhatsApp</a>
+      <button type="button" class="btn btn-ghost btn-block" id="okClose">Fechar</button>
+    </div>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script>
+    if (window.HF_CONFIG.firebase) {
+      document.write('<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"><\/script>' +
+                     '<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"><\/script>' +
+                     '<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"><\/script>');
+    }
+  </script>
+  <script src="js/cars.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

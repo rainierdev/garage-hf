@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Painel do Dono | Garage HF</title>
+  <meta name="theme-color" content="#0b0b0c">
+  <link rel="icon" href="img/logo.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- LOGIN -->
+  <div class="adm-login" id="login" hidden>
+    <form id="loginForm">
+      <img src="img/logo.webp" alt="Garage HF Estética">
+      <h1>Painel do dono</h1>
+      <p id="loginHint"></p>
+      <label id="emailWrap" hidden>E-mail<input type="email" name="email" autocomplete="username"></label>
+      <label>Senha<input type="password" name="senha" autocomplete="current-password" required></label>
+      <div class="err" id="loginErr"></div>
+      <button class="btn btn-primary btn-block" type="submit">Entrar</button>
+      <a href="index.html" class="footer-admin">← Voltar ao site</a>
+      <span class="fixa-credit">Desenvolvido por <img src="img/fixa-estudio.png" alt="Fixa Estúdio"></span>
+    </form>
+  </div>
+
+  <!-- APP -->
+  <div class="adm" id="app" hidden>
+    <aside class="adm-side" id="side"></aside>
+    <main class="adm-main">
+      <nav class="adm-mobile-tabs" id="mtabs"></nav>
+
+      <!-- AGENDA -->
+      <section class="adm-panel" data-panel="agenda">
+        <div class="adm-head">
+          <div><h1>Agendamentos</h1><p>Tudo o que os clientes marcaram pelo site.</p></div>
+          <button class="btn btn-ghost btn-sm" id="reload">Atualizar</button>
+        </div>
+        <div class="kpis" id="kpis"></div>
+        <div class="filters">
+          <select id="fPeriodo">
+            <option value="prox">Próximos</option>
+            <option value="hoje">Hoje</option>
+            <option value="semana">Próximos 7 dias</option>
+            <option value="passados">Anteriores</option>
+            <option value="todos">Todos</option>
+          </select>
+          <select id="fStatus">
+            <option value="">Todos os status</option>
+            <option value="confirmado">Confirmados</option>
+            <option value="concluido">Concluídos</option>
+            <option value="cancelado">Cancelados</option>
+          </select>
+          <input type="search" id="fBusca" placeholder="Buscar cliente, placa, carro...">
+        </div>
+        <div id="bkList"></div>
+      </section>
+
+      <!-- CALENDÁRIO / FOLGAS -->
+      <section class="adm-panel" data-panel="folgas">
+        <div class="adm-head"><div><h1>Folgas e feriados</h1><p>Clique num dia do calendário para fechar o dia inteiro ou só alguns horários.</p></div></div>
+        <div class="card">
+          <div class="cal-nav">
+            <button class="btn btn-ghost btn-sm" id="calPrev">‹ Anterior</button>
+            <b id="calTitle"></b>
+            <button class="btn btn-ghost btn-sm" id="calNext">Próximo ›</button>
+          </div>
+          <div class="cal" id="cal"></div>
+          <ul class="legend">
+            <li><i style="background:var(--red)"></i>Dia bloqueado</li>
+            <li><i style="background:var(--y)"></i>Horários bloqueados</li>
+            <li><i style="background:var(--green)"></i>Com agendamentos</li>
+            <li><i style="background:var(--line2)"></i>Fechado (horário semanal)</li>
+          </ul>
+        </div>
+
+        <div class="card" id="blockEditor" hidden>
+          <h2 id="beTitle"></h2>
+          <p class="sub" id="beSub"></p>
+          <div class="grid3">
+            <label class="fld">Tipo
+              <select id="beTipo"><option value="folga">Folga</option><option value="feriado">Feriado</option><option value="fechado">Fechado</option></select>
+            </label>
+            <label class="fld">Motivo (aparece para o cliente)<input id="beMotivo" placeholder="Ex.: Viagem, Natal..."></label>
+            <label class="fld">Bloquear
+              <select id="beModo"><option value="dia">O dia inteiro</option><option value="horas">Só alguns horários</option></select>
+            </label>
+          </div>
+          <div id="beHoras" hidden>
+            <p class="sub" style="margin:14px 0 0">Marque os horários que NÃO estarão disponíveis:</p>
+            <div class="hours-pick" id="beHorasList"></div>
+          </div>
+          <div class="save-bar" style="position:static">
+            <button class="btn btn-danger" id="beRemove">Liberar este dia</button>
+            <button class="btn btn-ghost" id="beCancel">Cancelar</button>
+            <button class="btn btn-primary" id="beSave">Salvar bloqueio</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>Feriados nacionais</h2>
+          <p class="sub">Marque os feriados em que a estética não vai abrir e clique em salvar.</p>
+          <select id="holAno" style="width:auto"></select>
+          <div class="hol-list" id="holList"></div>
+          <div class="save-bar" style="position:static"><button class="btn btn-primary" id="holSave">Salvar feriados</button></div>
+        </div>
+
+        <div class="card">
+          <h2>Bloqueios cadastrados</h2>
+          <p class="sub">Próximas folgas, feriados e horários fechados.</p>
+          <div class="block-list" id="blockList"></div>
+        </div>
+      </section>
+
+      <!-- HORÁRIOS -->
+      <section class="adm-panel" data-panel="horarios">
+        <div class="adm-head"><div><h1>Horário de funcionamento</h1><p>Dias e horários em que você atende toda semana.</p></div></div>
+        <div class="card">
+          <h2>Semana</h2>
+          <p class="sub">Desligue os dias em que não abre.</p>
+          <div class="week" id="week"></div>
+        </div>
+        <div class="card">
+          <h2>Regras da agenda</h2>
+          <p class="sub">Como os horários aparecem para o cliente.</p>
+          <div class="grid2">
+            <label class="fld">Intervalo entre horários
+              <select id="sSlot"><option value="30">30 minutos</option><option value="60">1 hora</option><option value="90">1h30</option><option value="120">2 horas</option></select>
+            </label>
+            <label class="fld">Carros atendidos ao mesmo tempo<input id="sCap" type="number" min="1" max="10"><small>Se você tem 2 boxes e 2 pessoas, coloque 2.</small></label>
+            <label class="fld">Antecedência mínima para agendar (horas)<input id="sAnt" type="number" min="0" max="72"></label>
+            <label class="fld">Agenda aberta até quantos dias à frente<input id="sDias" type="number" min="7" max="120"></label>
+          </div>
+        </div>
+        <div class="save-bar"><button class="btn btn-primary btn-lg" id="saveHorarios">Salvar horários</button></div>
+      </section>
+
+      <!-- SERVIÇOS -->
+      <section class="adm-panel" data-panel="servicos">
+        <div class="adm-head">
+          <div><h1>Serviços e preços</h1><p>O preço é o valor para hatch/compacto. Os outros portes recebem o acréscimo abaixo.</p></div>
+          <button class="btn btn-ghost btn-sm" id="addSvc">+ Novo serviço</button>
+        </div>
+        <div id="svcList"></div>
+        <div class="card">
+          <h2>Acréscimo por porte do veículo</h2>
+          <p class="sub">Porcentagem somada ao preço base. Ex.: 30% numa picape faz uma lavagem de R$ 50 virar R$ 65.</p>
+          <div class="grid2" id="catList"></div>
+        </div>
+        <div class="save-bar"><button class="btn btn-primary btn-lg" id="saveServicos">Salvar serviços e preços</button></div>
+      </section>
+
+      <!-- CONFIG -->
+      <section class="adm-panel" data-panel="config">
+        <div class="adm-head"><div><h1>Configurações</h1><p>Contato da estética e segurança do painel.</p></div></div>
+        <div class="card">
+          <h2>Dados da estética</h2>
+          <p class="sub">Aparecem no site e na mensagem do WhatsApp.</p>
+          <div class="grid2">
+            <label class="fld">Nome<input id="cNome"></label>
+            <label class="fld">WhatsApp que recebe os agendamentos<input id="cWhats" inputmode="tel"><small>Com DDI e DDD, só números. Ex.: 5564996186585</small></label>
+            <label class="fld">Instagram<input id="cInsta" placeholder="estetica.hf"></label>
+            <label class="fld">Endereço<input id="cEnd"></label>
+          </div>
+        </div>
+        <div class="card" id="pinCard">
+          <h2>Senha do painel</h2>
+          <p class="sub">Troque a senha padrão (1234) assim que possível.</p>
+          <div class="grid2">
+            <label class="fld">Nova senha<input id="cPin" type="password" autocomplete="new-password"></label>
+            <label class="fld">Repita a nova senha<input id="cPin2" type="password" autocomplete="new-password"></label>
+          </div>
+        </div>
+        <div class="card">
+          <h2>Cópia de segurança</h2>
+          <p class="sub">Baixe tudo (configurações e agendamentos) num arquivo, ou restaure de um arquivo salvo.</p>
+          <div class="filters">
+            <button class="btn btn-ghost" id="exportBtn">Baixar cópia</button>
+            <label class="btn btn-ghost">Restaurar configurações<input type="file" id="importFile" accept="application/json" hidden></label>
+          </div>
+        </div>
+        <div class="save-bar"><button class="btn btn-primary btn-lg" id="saveConfig">Salvar configurações</button></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script>
+    if (window.HF_CONFIG.firebase) {
+      document.write('<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"><\/script>' +
+                     '<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"><\/script>' +
+                     '<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"><\/script>');
+    }
+  </script>
+  <script src="js/store.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

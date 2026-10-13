@@ -1,0 +1,10 @@
+# Material interno (não publicar)
+*.pdf
+proposta/
+.claude/
+
+# Arquivos originais baixados (já copiados e renomeados em img/)
+SaveClip.App_*
+Emblema*.png
+ccf7ce3b-*.png
+img/video3.mp4

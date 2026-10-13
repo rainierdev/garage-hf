@@ -1,0 +1,33 @@
+rules_version = '2';
+// Regras de segurança do Firestore para o site Garage HF Estética.
+// TROQUE o e-mail abaixo pelo e-mail do dono cadastrado em Authentication.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isAdmin() {
+      return request.auth != null && request.auth.token.email == 'EMAIL_DO_DONO@gmail.com';
+    }
+
+    // Serviços, preços, horários e folgas: todos leem, só o dono altera.
+    match /config/{doc} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // Horários ocupados (sem nome nem telefone): todos leem, clientes só criam.
+    match /busy/{id} {
+      allow read: if true;
+      allow create: if request.resource.data.keys().hasOnly(['data', 'inicio', 'duracao'])
+                    && request.resource.data.duracao is int
+                    && request.resource.data.duracao <= 720;
+      allow update, delete: if isAdmin();
+    }
+
+    // Agendamentos completos (com dados do cliente): cliente só cria, só o dono lê.
+    match /bookings/{id} {
+      allow create: if request.resource.data.status == 'confirmado'
+                    && request.resource.data.nome is string
+                    && request.resource.data.nome.size() < 120;
+      allow read, update, delete: if isAdmin();
+    }
+  }
+}

@@ -1,0 +1,32 @@
+/* Modelos de veículos mais comuns no Brasil.
+   Categoria: h = hatch/compacto · s = sedã/cupê · u = SUV · p = picape/caminhonete */
+window.HF_CARS = {
+  'Chevrolet': 'Onix:h|Onix Plus:s|Prisma:s|Celta:h|Corsa:h|Classic:s|Cobalt:s|Agile:h|Cruze:s|Spin:u|Tracker:u|Montana:p|S10:p|Trailblazer:u|Equinox:u|Blazer:u|Captiva:u|Camaro:s|Silverado:p|D20:p',
+  'Fiat': 'Mobi:h|Uno:h|Palio:h|Argo:h|Punto:h|Idea:h|Cronos:s|Siena:s|Grand Siena:s|Linea:s|Pulse:u|Fastback:u|Doblò:u|Strada:p|Toro:p|Fiorino:p|Titano:p|Ducato:p',
+  'Volkswagen': 'Gol:h|Fox:h|Up!:h|Polo:h|Golf:h|CrossFox:h|SpaceFox:h|Voyage:s|Virtus:s|Jetta:s|Passat:s|T-Cross:u|Nivus:u|Tera:u|Taos:u|Tiguan:u|Saveiro:p|Amarok:p',
+  'Ford': 'Ka:h|Ka Sedan:s|Fiesta:h|Focus:h|Fusion:s|EcoSport:u|Territory:u|Bronco Sport:u|Edge:u|Ranger:p|Maverick:p|F-150:p|F-250:p|Courier:p',
+  'Toyota': 'Etios:h|Yaris:h|Yaris Sedan:s|Corolla:s|Prius:h|Corolla Cross:u|Yaris Cross:u|RAV4:u|SW4:u|Hilux:p',
+  'Honda': 'Fit:h|City:s|City Hatchback:h|Civic:s|Accord:s|HR-V:u|WR-V:u|ZR-V:u|CR-V:u',
+  'Hyundai': 'HB20:h|HB20S:s|i30:h|Elantra:s|Azera:s|Creta:u|ix35:u|Tucson:u|Santa Fe:u|HR:p',
+  'Renault': 'Kwid:h|Sandero:h|Stepway:h|Clio:h|Logan:s|Fluence:s|Duster:u|Captur:u|Kardian:u|Boreal:u|Oroch:p|Master:p',
+  'Nissan': 'March:h|Versa:s|Sentra:s|Kicks:u|Frontier:p',
+  'Jeep': 'Renegade:u|Compass:u|Commander:u|Wrangler:u|Gladiator:p',
+  'RAM': 'Rampage:p|1500:p|2500:p|3500:p',
+  'Mitsubishi': 'Lancer:s|ASX:u|Eclipse Cross:u|Outlander:u|Pajero:u|Pajero Sport:u|Pajero TR4:u|L200 Triton:p',
+  'Peugeot': '206:h|207:h|208:h|308:h|408:s|2008:u|3008:u|5008:u|Partner:p',
+  'Citroën': 'C3:h|C4 Lounge:s|Basalt:u|C3 Aircross:u|Aircross:u|C4 Cactus:u|Jumpy:p',
+  'Kia': 'Picanto:h|Soul:h|Cerato:s|Stonic:u|Sportage:u|Sorento:u|Bongo:p',
+  'BYD': 'Dolphin Mini:h|Dolphin:h|King:s|Seal:s|Yuan Pro:u|Yuan Plus:u|Song Pro:u|Song Plus:u|Tan:u|Shark:p',
+  'GWM': 'Ora 03:h|Haval H6:u|Haval H2:u|Tank 300:u|Poer:p',
+  'Caoa Chery': 'QQ:h|Arrizo 5:s|Arrizo 6:s|Tiggo 2:u|Tiggo 3X:u|Tiggo 5X:u|Tiggo 7:u|Tiggo 8:u',
+  'Suzuki': 'Swift:h|Jimny:u|Vitara:u|S-Cross:u',
+  'BMW': 'Série 1:h|Série 3:s|320i:s|Série 5:s|X1:u|X2:u|X3:u|X4:u|X5:u|X6:u',
+  'Mercedes-Benz': 'Classe A:h|Classe C:s|Classe E:s|GLA:u|GLB:u|GLC:u|GLE:u|Sprinter:p',
+  'Audi': 'A3:h|A4:s|A5:s|Q3:u|Q5:u|Q7:u|Q8:u',
+  'Volvo': 'EX30:u|XC40:u|XC60:u|XC90:u',
+  'Land Rover': 'Range Rover Evoque:u|Range Rover Velar:u|Range Rover Sport:u|Discovery:u|Discovery Sport:u|Defender:u',
+  'Porsche': '911:s|718 Cayman:s|Panamera:s|Taycan:s|Macan:u|Cayenne:u',
+  'Chevrolet (clássicos)': 'Opala:s|Chevette:h|Monza:s|Kadett:h|Vectra:s|Astra:h|Meriva:u|Zafira:u|Blazer (antiga):u|S10 (antiga):p',
+  'Volkswagen (clássicos)': 'Fusca:h|Brasília:h|Santana:s|Parati:h|Kombi:p|Quantum:s',
+  'Fiat (clássicos)': '147:h|Tempra:s|Tipo:h|Marea:s|Stilo:h|Weekend:h'
+};
